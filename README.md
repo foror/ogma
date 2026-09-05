@@ -98,7 +98,7 @@ Any Ogma source code file represents a specific type. The name is taken from the
   - passed by reference to method parameters and returned from methods by reference (by value Foo')
   - multiple inheritance
 
-### Addition types
+### Additions
 + **@tree** for convenient representation of hierarchical data in source code
 + **@enum** enumeration
 + **@trait** interface
