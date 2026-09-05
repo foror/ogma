@@ -8,3 +8,12 @@ A programming language for the experimental validation of new concepts in applic
 + **A lightweight IDE as an extension of the compiler.** It provides a comfortable development environment with powerful refactoring tools and code change history.
 + **Strict static typing and an object-oriented programming paradigm.** Designed for operating system and application software development.
 + **A lightweight runtime for microcontroller development.** Development of control programs for applications ranging from simple mechanisms to CNC machines.
+
+## Hello, World!
+```
+@common ::
+
+stdio ~
+  put("Hello, World!")
+  nel()
+```
