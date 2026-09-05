@@ -20,7 +20,7 @@ stdio ~
 ```
 ## Dependency Injection
 To register in the DI container, add one of the following macros to the first line of the source code:
-+ **@common** initializes a single object using a parameterless constructor. The **::method_name** parameter can be added to synchronously execute a method of the object immediately after initialization. For an object with no methods, the default method (the code following @common) will be called. To execute the default method, add **::**.
++ **@common** initializes a single object using a parameterless constructor. The **::method_name** parameter can be added to synchronously execute a method of the object immediately after initialization. For an object with no methods, the default method (the code following @common) will be called. To execute the default method, add **::**
 + **@custom** is similar to **@common**, but requires explicit object initialization in the DI module.
 
 Additional parameters: [**#repeat**, **#per-thread**, **#async**, **#sync**, **#task**]
@@ -46,7 +46,7 @@ Types may have similar interfaces but different implementations. To highlight ty
 + **i8/[big-endian, safe]**
 + **i8/[big-endian, unsafe]**
 
-For **List**, this can be a set of the following types: List/array, List/linked, List/[copy-on-write, array], etc.
+For **List**, this can be a set of the following types: **List/array**, **List/linked**, **List/[copy-on-write, array]**, etc.
 
 The DI module defines which of the presented types will represent i8 by default. It is also possible to define scopes by specifying packages where i8 will be represented by a specific type. Such rules can be overridden in other modules.
 ```
@@ -54,7 +54,7 @@ The DI module defines which of the presented types will represent i8 by default.
 @unit
 
 define [i8, ogma.number.i8/[unsafe, little-endian]]
-enable:import i8 -- Automatically import i8 into the source code of other types
+auto:import i8 -- Automatically import i8 into the source code of other types
 ```
 ```
 -- Foo.ogma
