@@ -104,6 +104,18 @@ Any Ogma source code file represents a specific type. The name is taken from the
 + **@trait** interface
 + **@prot** abstract type
 
+### Abbreviations
++ [] - Array/safe
++ <> - List/[array, safe]
++ <,> - Map/hash
++ "" - sx (Survik a hybrid SBCS/Unicode variable-length character encoding)
+```
+foo:[u32]
+bar:<Qux>
+quz:<i64, "">
+baz:""
+```
+
 ## Loop
 ```
 loop [i, v] of array   
