@@ -61,7 +61,7 @@ enable:import i8 -- Automatically import i8 into the source code of other types
 
 foo:i8#42 -- initialize the value 42 as type ogma.number.i8/[unsafe, little-endian]
 ```
-## Types
+## Type system
 Any Ogma source code file represents a specific type. The name is taken from the file name, so it does not need to be specified in the source code. The type itself defaults to **@type**, so it does not need to be specified either. However, in some cases, the type must be explicitly defined:
 
 + **@basic**
