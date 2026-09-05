@@ -35,3 +35,29 @@ on:cancel:
 delay: Duration
   ...
 ```
+
+### Tagging
+Types may have similar interfaces but different implementations. To highlight type-specific characteristics, Ogma uses tagging:
+#### Common interface i8 - an integer type 1 byte in size
++ **i8/safe** implements mandatory overflow checking for all types of operations
++ **i8/unsafe** performs no overflow checking
++ **i8/[little-endian, safe]**
++ **i8/[little-endian, unsafe]**
++ **i8/[big-endian, safe]**
++ **i8/[big-endian, unsafe]**
+
+For **List**, this can be a set of the following types: List/array, List/linked, List/[copy-on-write, array], etc.
+
+The DI module defines which of the presented types will represent i8 by default. It is also possible to define scopes by specifying packages where i8 will be represented by a specific type. Such rules can be overridden in other modules.
+```
+-- Unit.ogma
+@unit
+
+define [i8, ogma.number.i8/[unsafe, little-endian]]
+enable:import i8 -- Automatically import i8 into the source code of other types
+```
+```
+-- Foo.ogma
+
+foo:i8#42 -- initialize the value 42 as type ogma.number.i8/[unsafe, little-endian]
+```
