@@ -121,11 +121,11 @@ baz:""
 loop [i, v] of array   
   @info array.get i
 
-loop i:ux = array.get:high   
+loop i:ix = array.get:high   
   @info array.get(i)
 with i-- and i >= 0
 
-loop [i:u32 = array.get:high, j:u32 = 0]   
+loop [i:ix = array.get:high, j:u32 = 0]   
   @info array.get(i)
 with [i--, j++] and [i > 0, j < 10]
 ```
