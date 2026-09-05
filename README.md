@@ -61,3 +61,17 @@ enable:import i8 -- Automatically import i8 into the source code of other types
 
 foo:i8#42 -- initialize the value 42 as type ogma.number.i8/[unsafe, little-endian]
 ```
+
+## Loop
+```
+loop [i, v] of array   
+  @info array.get i
+
+loop i:ux = array.get:high   
+  @info array.get(i)
+with i-- and i >= 0
+
+loop [i:u32 = array.get:high, j:u32 = 0]   
+  @info array.get(i)
+with [i--, j++] and [i > 0, j < 10]
+```
