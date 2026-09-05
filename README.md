@@ -61,6 +61,48 @@ enable:import i8 -- Automatically import i8 into the source code of other types
 
 foo:i8#42 -- initialize the value 42 as type ogma.number.i8/[unsafe, little-endian]
 ```
+### Types
+Any Ogma source code file represents a specific type. The name is taken from the file name, so it does not need to be specified in the source code. The type itself defaults to @type, so it does not need to be specified either. However, in some cases, the type must be explicitly defined:
+
++ **@basic**
+  - the type name is always lowercase
+  - passed by value
+  - the order of fields in the file is significant
+  - fields are inaccessible from outside
+  - not inheritable
+  - does not store the type in the object
++ **@struct**
+  - the type name is always uppercase
+  - fields are directly accessible (behavior can be changed using the @[get, set] macros)
+  - the order of fields in the file is significant
+  - passed by value to containers (by reference Foo^)
+  - passed by reference to method parameters and returned from methods by reference (by value Foo')
+  - passed by value to fields of other types (by reference Foo^)
+  - does not store the type in the object
++ **@form**
+  - the type name is always uppercase
+  - all fields have @[get, set]
+  - stores the type in the object
+  - the order of fields in the file is significant
+  - passed by reference to containers (by value Foo')
+  - passed by reference to fields of other types (by value Foo')
+  - passed by reference to method parameters and returned from methods by reference (by value Foo')
+  - multiple inheritance
++ **@type**
+  - the type name is always uppercase
+  - fields are private (behavior can be changed using the @[get, set] macros)
+  - stores the type in the object
+  - the order of fields in the file is significant
+  - passed by reference to containers (by value Foo')
+  - passed by reference to fields of other types (by value Foo')
+  - passed by reference to method parameters and returned from methods by reference (by value Foo')
+  - multiple inheritance
+
+### Addition types
++ **@tree** for convenient representation of hierarchical data in source code
++ **@enum** enumeration
++ **@trait** interface
++ **@prot** abstract type
 
 ## Loop
 ```
