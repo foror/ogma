@@ -36,7 +36,7 @@ delay: Duration
   ...
 ```
 
-### Tagging
+## Tagging
 Types may have similar interfaces but different implementations. To highlight type-specific characteristics, Ogma uses tagging:
 #### Common interface i8 - an integer type 1 byte in size
 + **i8/safe** implements mandatory overflow checking for all types of operations
