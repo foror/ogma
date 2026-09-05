@@ -18,3 +18,20 @@ stdio ~
   put("Hello, World!")
   nel()
 ```
+## Dependency Injection
+To register in the DI container, add one of the following macros to the first line of the source code:
++ **@common** initializes a single object using a parameterless constructor. The **::method_name** parameter can be added to synchronously execute a method of the object immediately after initialization. For an object with no methods, the default method (the code following @common) will be called. To execute the default method, add **::**.
++ **@custom** is similar to **@common**, but requires explicit object initialization in the DI module.
+
+Additional parameters: [**#repeat**, **#per-thread**, **#async**, **#sync**, **#task**]
+```
+@common #repeat
+< Repeatable
+
+on:repeat: Duration?    
+  ...
+on:cancel:    
+  ...
+delay: Duration
+  ...
+```
