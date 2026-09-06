@@ -53,7 +53,7 @@ The DI module defines which of the presented types will represent i8 by default.
 -- Unit.ogma
 @unit
 
-define [i8, ogma.number.i8/[unsafe, little-endian]]
+bind [i8, ogma.number.i8/[unsafe, little-endian]]
 auto:import i8 -- Automatically import i8 into the source code of other types
 ```
 ```
