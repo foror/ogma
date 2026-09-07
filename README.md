@@ -116,6 +116,52 @@ quz:<i64, "">
 baz:""
 ```
 
+## Packages and Namespace
+
+A package is necessary to avoid naming conflicts and therefore must be unique. To achieve this, use the organization name combined with the library or application name, separated by a dot. For example, **tau.survik** would be a good package name.
+
+A namespace is necessary for grouping types around a particular concept. For example, when creating a blog, **Article** can serve as a namespace for **Entity.ogma**, **Repo.ogma**, and **Service.ogma**. In the file system, it would look like this:
++ tau/site/Article/
+    - Entity.ogma
+    - Repo.ogma
+    - Service.ogma
+
+```
+::tau.site.Article -- the import applies only to the following line
+:Entity#(foo, bar) -- automatically creates the entity variable
+```
+```
+::tau.site.Article.Repo ~ get:by_pk(foo) => article:Entity
+stdio ~
+    put(article.get:title)
+    put(article.get:author().get:name)
+```
+```
+-- Foo.ogma
+::tau.site.[Article, Comment, Author]
+
+-- # start of the Foo constructor
+-- article_repo, comment_repo, and author_repo fields are created automatically
+-- DI sets the values of these fields
+#
+    :Article.Repo 
+    :Comment.Repo
+    :Author.Repo
+
+::Article -- the Article namespace has priority throughout the scope of the print:by_id method
+print:by_id(Key.Long<Entity> pk):
+    article_repo.get:by_pk(pk) => article:Entity
+    stdio ~
+        auto:nel
+        put(article.get:title)
+        put(article.get:author().get:name)
+
+        loop [v,] of article.get:comments
+            manual:nel
+            put(v.get:created)
+            nel()
+```
+
 ## Loop
 ```
 loop [i, v] of array   
