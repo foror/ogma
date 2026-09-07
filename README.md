@@ -134,7 +134,7 @@ A namespace is necessary for grouping types around a particular concept. For exa
 -- Bar.ogma
 
 -- only working for default type method
--- DI set value and create field article_repo
+-- DI sets the value of the article_repo field and creates it
 ::tau.site.Article.Repo ~ get:by_pk(foo) => article:Entity
 stdio ~
     put(article.get:title)
