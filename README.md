@@ -140,16 +140,22 @@ stdio ~
 -- Foo.ogma
 ::tau.site.[Article, Comment, Author]
 
--- # start of the Foo constructor
--- article_repo, comment_repo, and author_repo fields are created automatically
--- DI sets the values of these fields
+"""
+# start of the Foo constructor
+article_repo, comment_repo, and author_repo fields are created automatically
+DI sets the values of these fields
+"""
 #
     :Article.Repo 
     :Comment.Repo
     :Author.Repo
 
-::Article -- the Article namespace has priority throughout the scope of the print:by_id method
+::Article
 print:by_id(Key.Long<Entity> pk):
+    """
+    the Article namespace has priority throughout
+    the scope of the method
+    """
     article_repo.get:by_pk(pk) => article:Entity
     stdio ~
         auto:nel
