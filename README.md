@@ -131,6 +131,10 @@ A namespace is necessary for grouping types around a particular concept. For exa
 :Entity#(foo, bar) -- automatically creates the entity variable
 ```
 ```
+-- Bar.ogma
+
+-- only working for default type method
+-- DI set value and create field article_repo
 ::tau.site.Article.Repo ~ get:by_pk(foo) => article:Entity
 stdio ~
     put(article.get:title)
