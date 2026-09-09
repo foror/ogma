@@ -191,7 +191,7 @@ with [i--, j++] and [i > 0, j < 10]
 ```
 foo(bar:""): <i8>
     ...
-    -- return result as value of i8 type
+    -- return result as list of values i8 type
     result =
 
 foo:
