@@ -240,3 +240,17 @@ product:Product::[...] = product_prices.get:first
 product.get:price -- ok
 product.get:name -- a compile-time error
 ```
+
+## Builder
+```
+-- like String foo = new StringBuilder(1024).append(...).build()
+""...#1024 ~
+    append(“foo“)
+    append(“bar“)
+    build() => foo:""
+
+1.0f.(f32.Formatter...)
+.comma(2)
+.science(true)
+.build()
+```
