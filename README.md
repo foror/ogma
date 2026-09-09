@@ -229,3 +229,14 @@ foo.("%.2f").get:length
 -- to integer
 foo.(i32)
 ```
+
+## Cross-section
+```
+<Entity.Ref<Product::[...]>> product_prices = mormont.fetch(
+    Product::[pk, price]
+)
+
+Product::[...] product = product_prices.get:first
+product.get:price -- ok
+product.get:name -- a compile-time error
+```
