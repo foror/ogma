@@ -185,3 +185,36 @@ loop [i:ix = array.get:high, j:u32 = 0]   
   @info array.get(i)
 with [i--, j++] and [i > 0, j < 10]
 ```
+
+### Methods
+
+```
+foo(bar:""): <i8>
+    ...
+    -- return result as value of i8 type
+    result =
+
+foo:
+    ...
+
+foo:(baz:i8):
+    ...
+
+draw:
+    -- methods using colon notation can be called without parentheses
+    draw:head
+    draw:body
+
+draw:head:
+    ...
+
+draw:body:
+    ...
+
+get:by_id(pk:i64): Quz
+    quz_repo.fetch:by_id(pk) =
+
+-- static methods must be called using the Foo#baz() syntax
+#baz:
+    ...
+```
