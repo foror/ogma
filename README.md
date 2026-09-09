@@ -220,11 +220,12 @@ get:by_id(pk:i64): Quz
 ```
 
 ## Cast
-
+```
 foo:f32
 
--- to string with %.2f pattern
+-- to string with pattern
 foo.("%.2f").get:length
 
 -- to integer
 foo.(i32)
+```
