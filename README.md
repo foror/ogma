@@ -186,7 +186,7 @@ loop [i:ix = array.get:high, j:u32 = 0]   
 with [i--, j++] and [i > 0, j < 10]
 ```
 
-### Methods
+## Methods
 
 ```
 foo(bar:""): <i8>
@@ -218,3 +218,13 @@ get:by_id(pk:i64): Quz
 #baz:
     ...
 ```
+
+## Cast
+
+foo:f32
+
+-- to string with %.2f pattern
+foo.("%.2f").get:length
+
+-- to integer
+foo.(i32)
