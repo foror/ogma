@@ -108,7 +108,7 @@ Any Ogma source code file represents a specific type. The name is taken from the
 + [] - Array/safe
 + <> - List/[array, safe]
 + <,> - Map/hash
-+ "" - sx (Survik a hybrid SBCS/Unicode variable-length character encoding)
++ "" - sx (Survik a hybrid SBCS/Unicode variable-length character encoding) https://github.com/foror/survik
 ```
 foo:[u32]
 bar:<Qux>
