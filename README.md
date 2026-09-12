@@ -254,3 +254,16 @@ product.get:name -- a compile-time error
 .science(true)
 .build()
 ```
+
+## Multiple inheritance
+```
+-- Beer.Entity.ogma
+
+< Entity<Key.Long>
+
+< Marking
+    -- priority
+    equals
+    hash
+    to:string
+```
