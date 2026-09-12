@@ -257,7 +257,7 @@ product.get:name -- a compile-time error
 
 ## Multiple inheritance
 ```
--- Beer.Entity.ogma
+-- Marking.Beer.Entity.ogma
 
 < Entity<Key.Long>
 
